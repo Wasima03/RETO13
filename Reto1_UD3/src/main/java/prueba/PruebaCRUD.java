@@ -71,7 +71,7 @@ public class PruebaCRUD {
         System.out.print("¿Quieres añadir una mascota? (s/n): ");
         String respuesta = sc.nextLine();
 
-        if (respuesta.equalsIgnoreCase("s")) {
+        while (respuesta.equalsIgnoreCase("s")) {
 
             System.out.print("Nombre de la mascota: ");
             String nb = sc.nextLine();

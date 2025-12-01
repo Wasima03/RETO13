@@ -1,8 +1,5 @@
 package prueba;
 
-import java.io.Serializable;
-import java.sql.Date;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,6 +20,7 @@ public class Mascota{
 	String nombre;
 	
 	@ManyToOne
+	@JoinColumn(name = "propietario_fk")
 	Propietario propietario;
 
 	@Column(name = "especie")

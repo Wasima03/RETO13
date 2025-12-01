@@ -9,17 +9,30 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
+
 @Entity
-public class Mascota implements Serializable{
+@Table(name = "Mascota")
+public class Mascota{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name = "mascota_id")
 	long id;
+
+	@Column(name = "nombre")
 	String nombre;
+	
 	@ManyToOne
 	Propietario propietario;
+
+	@Column(name = "especie")
 	String especie;
+	
+	@Enumerated(EnumType.STRING)
+	@Column(name = "genero")
 	Genero genero;
+
+	@Column(name = "fecha_nacimiento")
 	String nacimiento;
 	
 	public Mascota(String nombre, String especie, Genero genero, String nacimiento) {

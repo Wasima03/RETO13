@@ -13,16 +13,26 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
 @Entity
+@Table(name = "Propietario")
 public class Propietario implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name = "propietario_id")
 	long id;	
+	
+	@Column(name= "nombre")
 	String nombre;
+	
+	@Column(name= "apellido")
 	String apellido;
+	
+	@Column(name = "edad")
 	int edad;
+	
 	@OneToMany(cascade=CascadeType.ALL,mappedBy="propietario", fetch=FetchType.EAGER)
 	Set<Mascota> mascotas = new HashSet<Mascota>();
+	
 	public Propietario(String nombre, String apellido, int edad) {
 		super();
 		this.nombre = nombre;

@@ -1,6 +1,5 @@
 package prueba;
 
-import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,7 +13,7 @@ import jakarta.persistence.OneToMany;
 
 @Entity
 @Table(name = "Propietario")
-public class Propietario implements Serializable{
+public class Propietario{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
